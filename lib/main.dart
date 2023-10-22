@@ -1,9 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
 import 'package:firebase_core/firebase_core.dart';
+
+import 'package:t_booky/screens.dart/splashsceen.dart';
+import 'firebase_options.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 import 'package:t_booky/provider/signIn_page.dart';
 import 'firebase_options.dart';
+
 
 Future<void> main() async {
   await Firebase.initializeApp(
@@ -19,6 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -27,6 +33,7 @@ class MyApp extends StatelessWidget {
         ),
         // home: const MyHomePage(title: 'T-Booky'),
         home: SignInPage());
+
   }
 }
 
