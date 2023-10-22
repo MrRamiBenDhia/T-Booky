@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
-import 'package:booka/category/fantasy.dart';
-import 'package:booka/category/horror.dart';
-import 'package:booka/category/health.dart';
-import 'package:booka/category/adventure.dart';
-import 'package:booka/screens.dart/bookloading.dart';
-import 'package:booka/screens.dart/search.loadind.dart';
+import 'package:t_booky/category/fantasy.dart';
+import 'package:t_booky/category/horror.dart';
+import 'package:t_booky/category/health.dart';
+import 'package:t_booky/category/adventure.dart';
+import 'package:t_booky/screens.dart/bookloading.dart';
+import 'package:t_booky/screens.dart/search.loadind.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -55,22 +55,20 @@ class _homescreenState extends State<homescreen> {
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
-      resizeToAvoidBottomInset : false,
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xfff012AC0),
       body: SafeArea(
           child: Column(
-                children: [
+        children: [
           Container(
             decoration: BoxDecoration(
-                    image: DecorationImage(
-                      opacity: 0.4,
-                      image: AssetImage("assets/images/overlay.png"),
-                      fit: BoxFit.cover
-
-                      )
-                  ),
+                image: DecorationImage(
+                    opacity: 0.4,
+                    image: AssetImage("assets/images/overlay.png"),
+                    fit: BoxFit.cover)),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
               child: Row(
                 children: [
                   GestureDetector(
@@ -87,7 +85,6 @@ class _homescreenState extends State<homescreen> {
           ),
           Expanded(
             child: Container(
-              
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
@@ -120,23 +117,25 @@ class _homescreenState extends State<homescreen> {
                       height: 30,
                     ),
                     ElevatedButton(
-  onPressed: () {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return searchloading(text: t.text);
-    }));
-  },
-  style: ElevatedButton.styleFrom(
-    primary: Color(0xfff012AC0), // Background color
-    onPrimary: Colors.white, // Text color
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0), // Button border radius
-    ),
-  ),
-  child: Text(
-    "SEARCH",
-    style: TextStyle(fontWeight: FontWeight.bold),
-  ),
-),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return searchloading(text: t.text);
+                        }));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Color(0xfff012AC0), // Background color
+                        onPrimary: Colors.white, // Text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              8.0), // Button border radius
+                        ),
+                      ),
+                      child: Text(
+                        "SEARCH",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ),
                     SizedBox(
                       height: 20,
                     ),
@@ -171,7 +170,7 @@ class _homescreenState extends State<homescreen> {
                     Expanded(
                         child: Container(
                             child: ListView(
-                                            children: [
+                      children: [
                         SizedBox(
                           height: 10,
                         ),
@@ -254,13 +253,13 @@ class _homescreenState extends State<homescreen> {
                           height: 10,
                         ),
                         romance(c4: widget.c4),
-                                            ],
-                                          )))
+                      ],
+                    )))
                   ],
                 ),
               ))
-                ],
-              )),
+        ],
+      )),
     ));
   }
 }

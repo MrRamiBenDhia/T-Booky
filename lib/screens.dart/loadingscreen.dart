@@ -2,7 +2,7 @@
 
 import 'dart:convert';
 
-import 'package:booka/screens.dart/homescreen.dart';
+import 'package:t_booky/screens.dart/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -29,7 +29,6 @@ class _loadingscreenState extends State<loadingscreen>
     // TODO: implement initState
     super.initState();
     getcategorydata();
-    
   }
 
   void getcategorydata() async {
@@ -58,10 +57,9 @@ class _loadingscreenState extends State<loadingscreen>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              child:CircularProgressIndicator(
-                color: Colors.black,
-              )
-            )
+                child: CircularProgressIndicator(
+              color: Colors.black,
+            ))
           ],
         ),
       ),

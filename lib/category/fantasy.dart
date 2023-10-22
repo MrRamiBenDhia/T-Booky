@@ -1,5 +1,5 @@
-import 'package:booka/screens.dart/bookloading.dart';
-import 'package:booka/screens.dart/error.dart';
+import 'package:t_booky/screens.dart/bookloading.dart';
+import 'package:t_booky/screens.dart/error.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';

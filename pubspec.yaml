@@ -37,6 +37,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   cloud_firestore: ^4.11.0
   firebase_core: ^2.19.0
+  http: ^1.1.0
+  open_file: ^3.3.2
+  path_provider: ^2.1.1
+  url_launcher: ^6.1.14
+  google_fonts: ^6.1.0
+  dio: ^5.3.3
+  flutter_rating_bar: ^4.0.1
+  fluttertoast: ^8.2.2
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_interpolation_to_compose_strings, deprecated_member_use, use_full_hex_values_for_flutter_colors
 
 import 'dart:io' as i;
-import 'package:booka/screens.dart/homescreen.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:t_booky/screens.dart/homescreen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -11,6 +12,7 @@ import 'package:http/http.dart';
 import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class bookdisplay extends StatefulWidget {
   var d;
@@ -43,7 +45,7 @@ class _bookdisplayState extends State<bookdisplay> {
       url = widget.d["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"];
     } catch (e) {
       url = widget.d["items"][1]["volumeInfo"]["imageLinks"]["thumbnail"];
-          ;
+      ;
     }
   }
 
@@ -146,19 +148,20 @@ class _bookdisplayState extends State<bookdisplay> {
     return (Scaffold(
       backgroundColor: Color(0xfff012ac0),
       floatingActionButton: Padding(
-  padding: const EdgeInsets.symmetric(vertical: 25.0),
-  child: ElevatedButton(
-    onPressed: () async {
-      await launchUrl(Uri.parse(widget.d["items"][0]["accessInfo"]["webReaderLink"]));
-    },
-    style: ElevatedButton.styleFrom(
-      primary: Colors.black, // Background color
-      onPrimary: Colors.white, // Text color
-      onSurface: Colors.grey, // Splash color
-    ),
-    child: Text("READ BOOK"),
-  ),
-),
+        padding: const EdgeInsets.symmetric(vertical: 25.0),
+        child: ElevatedButton(
+          onPressed: () async {
+            await launchUrl(
+                Uri.parse(widget.d["items"][0]["accessInfo"]["webReaderLink"]));
+          },
+          style: ElevatedButton.styleFrom(
+            primary: Colors.black, // Background color
+            onPrimary: Colors.white, // Text color
+            onSurface: Colors.grey, // Splash color
+          ),
+          child: Text("READ BOOK"),
+        ),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
         child: Column(
@@ -388,6 +391,30 @@ class _bookdisplayState extends State<bookdisplay> {
                               desc,
                               style: GoogleFonts.lato(
                                   color: Colors.grey[600], fontSize: 15),
+                            ),
+                            RatingBar.builder(
+                              initialRating: 3,
+                              minRating: 1,
+                              direction: Axis.horizontal,
+                              allowHalfRating: true,
+                              itemCount: 5,
+                              itemPadding:
+                                  EdgeInsets.symmetric(horizontal: 4.0),
+                              itemBuilder: (context, _) => Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                              onRatingUpdate: (rating) {
+                                Fluttertoast.showToast(
+                                  msg: "You rated $rating stars",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  gravity: ToastGravity.CENTER,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor: Colors.red,
+                                  textColor: Colors.white,
+                                  fontSize: 16.0,
+                                );
+                              },
                             )
                           ],
                         ),
