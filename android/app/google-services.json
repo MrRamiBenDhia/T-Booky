@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "503321481614",
+    "project_id": "t-booky-d4f64",
+    "storage_bucket": "t-booky-d4f64.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503321481614:android:ea49b5c863b9e1afeb94df",
+        "android_client_info": {
+          "package_name": "com.example.t_booky"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxZab_SAbGhIqSKvfSp8MOMrVjIRD-8Fw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
