@@ -12,6 +12,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:provider/provider.dart';
+import 'package:t_booky/screens.dart/splashsceen.dart';
 
 import 'google_signin.dart';
 
@@ -44,7 +45,8 @@ class _SignInPageState extends State<SignInPage> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => MyHomePage(title: 'T-Booky'),
+            // builder: (context) => MyHomePage(title: 'T-Booky'),
+            builder: (context) => splashscreen(),
           ));
       showAlert(QuickAlertType.success,'Welcome');
     } catch (e) {
